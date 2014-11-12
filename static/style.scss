@@ -1,0 +1,139 @@
+---
+---
+
+$stickerColor: #428bca;
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+#viewport {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+
+  background-image: url('/static/self.jpg');
+  background-size: cover;
+  background-position: 69% 50%;
+}
+
+.hello {
+  $radius: 0.3em;
+  text-align: center;
+
+  margin: 0.5em auto;
+  max-width: 320px;
+
+  font-size: 40px;
+
+  .title {
+    -webkit-border-top-left-radius: $radius;
+    -webkit-border-top-right-radius: $radius;
+    -moz-border-radius-topleft: $radius;
+    -moz-border-radius-topright: $radius;
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+
+    background: $stickerColor;
+    color: white;
+  }
+
+  .title:before {
+    content: 'Hello';
+    display: block;
+    font-size: 0.9em;
+    line-height: 1em;
+    padding-top: 0.2em;
+  }
+
+  .title:after {
+    content: 'my name is';
+    display: block;
+    font-size: 0.4em;
+    line-height: 1em;
+    padding-bottom: 0.3em;
+  }
+
+  .name {
+    background: white;
+    line-height: 2em;
+  }
+
+  &:after {
+    content: ' ';
+    background: $stickerColor;
+    height: $radius;
+    display: block;
+
+    -webkit-border-bottom-left-radius: $radius;
+    -webkit-border-bottom-right-radius: $radius;
+    -moz-border-radius-bottomleft: $radius;
+    -moz-border-radius-bottomright: $radius;
+    border-bottom-left-radius: $radius;
+    border-bottom-right-radius: $radius;
+  }
+}
+
+.content {
+  background: rgba(255,255,255,0.75);
+}
+
+main {
+  margin-bottom: 100px;
+}
+
+footer {
+  text-align: center;
+
+  .symbol {
+    font-size: 35px;
+
+    a:hover {
+      text-decoration: none;
+    }
+  }
+
+  .silliness {
+    font-size: 7px;
+  }
+}
+
+@font-face {
+  font-family: 'Mono Social Icons Font';
+  src: url('mono/MonoSocialIconsFont-1.10.eot');
+  src: url('mono/MonoSocialIconsFont-1.10.eot?#iefix') format('embedded-opentype'),
+       url('mono/MonoSocialIconsFont-1.10.woff') format('woff'),
+       url('mono/MonoSocialIconsFont-1.10.ttf') format('truetype'),
+       url('mono/MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont') format('svg');
+  src: url('mono/MonoSocialIconsFont-1.10.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.symbol, a.symbol:before {
+  font-family: 'Mono Social Icons Font';
+  -webkit-text-rendering: optimizeLegibility;
+  -moz-text-rendering: optimizeLegibility;
+  -ms-text-rendering: optimizeLegibility;
+  -o-text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+a.symbol:before {
+  content: attr(title);
+  margin-right: 0.3em;
+  font-size: 130%;
+}
